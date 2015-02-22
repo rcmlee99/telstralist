@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>20A01616-A3AA-461F-A462-A753F104BAD6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TableListView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91B4FE38A8CF17F41A18EA18DB8A2B569AEA54FC</key>
+		<string>https://github.com/rcmlee99/telstralist.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TableListView.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91B4FE38A8CF17F41A18EA18DB8A2B569AEA54FC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rcmlee99/telstralist.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91B4FE38A8CF17F41A18EA18DB8A2B569AEA54FC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91B4FE38A8CF17F41A18EA18DB8A2B569AEA54FC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>telstralist</string>
+		</dict>
+	</array>
+</dict>
+</plist>
