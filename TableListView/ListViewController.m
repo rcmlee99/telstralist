@@ -86,9 +86,8 @@ float imagewidthadjust = 90.0f;
     [_mainTableView addSubview:refreshControl];
     
     //Refresh Control - Button
-    UIBarButtonItem *refreshButton=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"01-refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(updateData)];
-    
-    self.navigationItem.rightBarButtonItem = refreshButton;
+    //UIBarButtonItem *refreshButton=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"01-refresh"] style:UIBarButtonItemStyleBordered target:self action:@selector(updateData)];
+    //self.navigationItem.rightBarButtonItem = refreshButton;
     
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
@@ -334,22 +333,26 @@ float imagewidthadjust = 90.0f;
     newImageViewFrame.origin.y = lblTitle.frame.origin.y+headlineheight+10;
     newImageView.frame = newImageViewFrame;
     
-    if ((newurlString!=nil) || (newurlString != (NSString *)[NSNull null]) || (![newurlString isEqualToString:@""]))
-    {
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.center = newImageView.center;
     activityIndicator.hidesWhenStopped = YES;
     activityIndicator.hidden = NO;
     [activityIndicator startAnimating];
-     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",newurlString]];
-    [newImageView setImageWithURL:url
-                 placeholderImage:nil
-                          success:^(UIImage *image, BOOL dummy) { [activityIndicator stopAnimating]; [activityIndicator removeFromSuperview]; }
-                          failure:^(NSError *error) { [activityIndicator stopAnimating]; [activityIndicator removeFromSuperview];}
-     ];
     
-    [newImageView addSubview:activityIndicator];
+    //Loading image lazily using SDWebImage
+    if ((newurlString==nil) || (newurlString == (NSString *)[NSNull null]) || ([newurlString isEqualToString:@""]))
+    {
+        [activityIndicator stopAnimating]; [activityIndicator removeFromSuperview];
+    }
+    else
+    {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@",newurlString]];
+        [newImageView setImageWithURL:url
+                     placeholderImage:nil
+                              success:^(UIImage *image, BOOL dummy) { [activityIndicator stopAnimating]; [activityIndicator removeFromSuperview]; }
+                              failure:^(NSError *error) { [activityIndicator stopAnimating]; [activityIndicator removeFromSuperview];}
+     ];
+
     }
 
     return cell;
@@ -381,6 +384,7 @@ float imagewidthadjust = 90.0f;
         cellwidth = screenHeight;
     }
     loadingView.center = _mainTableView.center;
+    
     [_mainTableView reloadData];
 }
 
